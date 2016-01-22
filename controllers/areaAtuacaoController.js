@@ -12,3 +12,13 @@ exports.save = function(nome, descricao, callback){
                     }
             })
 }
+
+exports.list = function(callback){
+    AreaAtuacao.find({}, function(error, AreaAtuacao){
+        if(error){
+            callback({error: 'Não possível encontrar áreas'});
+        }else{
+            callback(AreaAtuacao);
+        }
+    });
+}

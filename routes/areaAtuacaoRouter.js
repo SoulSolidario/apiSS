@@ -12,4 +12,10 @@ router.post('/', function(req, res){
         })
 });
 
+router.get('/', function(req, res){
+	areaAtuacaoController.list(function(resp){
+		res.json(resp);
+	})
+});
+
 module.exports = router;
