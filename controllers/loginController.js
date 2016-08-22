@@ -1,9 +1,10 @@
-var AreaAtuacao = require('../models/areaAtuacao');
+var Login = require('../models/login');
 
-exports.save = function(nome, descricao, callback){
-            new AreaAtuacao({
-                    'nome': nome,
-                    'descricao': descricao
+exports.save = function(email, login, senha, callback){
+            new Login({
+                    'email': email,
+                    'login': login,
+                    'senha': senha
             }).save(function(error){
                     if(error){
                             callback({error: 'Não foi possível salvar'});
@@ -14,11 +15,11 @@ exports.save = function(nome, descricao, callback){
 }
 
 exports.list = function(callback){
-    AreaAtuacao.find({}, function(error, AreaAtuacao){
+    Login.find({}, function(error, login){
         if(error){
-            callback({error: 'Não possível encontrar áreas'});
+            callback({error: 'Não encontramos logins'});
         }else{
-            callback(AreaAtuacao);
+            callback(login);
         }
     });
 }

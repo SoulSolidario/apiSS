@@ -4,6 +4,7 @@ var db = require('./config/db_config');
 
 // Intances of routes
 var areas = require('./routes/areaAtuacaoRouter');
+var login = require('./routes/loginRouter');
 
 app.get('/', function(req, res){
     var ok = [{Bemvindo: 'API de Áreas de atuação de Organizações Sociais'},{
@@ -26,3 +27,4 @@ app.get('/', function(req, res){
 
 // Rotas
 app.use('/areas', areas);
+app.use('/login', login); 

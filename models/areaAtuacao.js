@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var AreaAtuacaoSchema = new Schema({
             nome: String,
             descricao: String
-})
+});
 
 // Return model - Schema
 module.exports = mongoose.model('AreaAtuacao', AreaAtuacaoSchema);
